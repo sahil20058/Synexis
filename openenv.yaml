@@ -1,0 +1,22 @@
+id: synexis
+name: Synexis Rescue Environment
+version: 1.0.0
+
+entry_point: env:RescueEnv
+
+tasks:
+  - id: easy
+    description: Easy rescue task
+    max_steps: 20
+
+  - id: medium
+    description: Medium rescue task
+    max_steps: 25
+
+  - id: hard
+    description: Hard rescue task
+    max_steps: 30
+
+grader:
+  type: simple
+  reward_range: [0.0, 1.0]
