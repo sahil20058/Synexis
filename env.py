@@ -1,4 +1,10 @@
 import random
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+# =========================
+# Environment Logic
+# =========================
 
 class RescueEnv:
     def __init__(self, size=5):
@@ -31,7 +37,7 @@ class RescueEnv:
 
     def step(self, action):
         if self.done:
-            return self.get_state(), 0, True
+            return self.get_state(), 0.0, True
 
         # Move agent
         if action == "UP":
@@ -47,7 +53,7 @@ class RescueEnv:
 
         # Check if rescued
         if self.agent_pos == self.victim_pos:
-            reward = 1
+            reward = 1.0
             self.done = True
 
         self.steps += 1
@@ -59,22 +65,33 @@ class RescueEnv:
         return self.get_state(), reward, self.done
 
 
+# =========================
+# FastAPI Wrapper (IMPORTANT)
+# =========================
 
-if __name__ == "__main__":
-    env = RescueEnv()
+app = FastAPI()
+
+env = RescueEnv()
+
+class ActionRequest(BaseModel):
+    action: str
+
+
+@app.post("/reset")
+def reset():
     state = env.reset()
+    return {
+        "observation": state,
+        "reward": 0.0,
+        "done": False
+    }
 
-    print("Initial State:", state)
 
-    for _ in range(10):
-        action = random.choice(["UP", "DOWN", "LEFT", "RIGHT"])
-        state, reward, done = env.step(action)
-
-        print("Action:", action)
-        print("State:", state)
-        print("Reward:", reward)
-        print("Done:", done)
-
-        if done:
-            print("Finished!")
-            break
+@app.post("/step")
+def step(req: ActionRequest):
+    state, reward, done = env.step(req.action)
+    return {
+        "observation": state,
+        "reward": reward,
+        "done": done
+    }
