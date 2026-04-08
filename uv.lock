@@ -1,0 +1,19 @@
+{
+  "project": {
+    "name": "synexis",
+    "version": "1.0.0",
+    "python": ">=3.10",
+    "dependencies": [
+      "fastapi",
+      "uvicorn",
+      "openenv-core",
+      "openai",
+      "python-dotenv",
+      "requests"
+    ]
+  },
+  "metadata": {
+    "lock_generated": "manual",
+    "compatible_with": "openenv"
+  }
+}
