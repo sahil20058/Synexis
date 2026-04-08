@@ -18,3 +18,5 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["."]
+[project.scripts]
+server = "server.app:app"
