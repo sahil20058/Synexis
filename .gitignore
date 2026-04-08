@@ -16,3 +16,5 @@ __pycache__/
 
 # Temporary files
 *.tmp
+
+test_agent.py
