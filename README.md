@@ -125,13 +125,16 @@ GET /status
 
 ## 📂 Project Structure
 Synexis/
-├── main.py
-├── env.py
-├── tasks.py
-├── grader.py
+├── server
+      ├── __init__.py
+      ├── app.py
+      ├── environment.py
+├── agent.py
+├── client.py
 ├── inference.py
 ├── openenv.yaml
 ├── Dockerfile
+├── models.py
 ├── requirements.txt
 └── README.md
 
