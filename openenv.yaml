@@ -2,7 +2,7 @@ id: synexis
 name: Synexis Rescue Environment
 version: 1.0.0
 
-entry_point: env:RescueEnv
+entrypoint: main:app
 
 tasks:
   - id: easy
@@ -16,7 +16,3 @@ tasks:
   - id: hard
     description: Hard rescue task
     max_steps: 30
-
-grader:
-  type: simple
-  reward_range: [0.0, 1.0]
