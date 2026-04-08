@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "synexis"
+version = "1.0.0"
+description = "Synexis Rescue Environment for OpenEnv"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "openenv-core",
+    "openai",
+    "python-dotenv",
+    "requests",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
