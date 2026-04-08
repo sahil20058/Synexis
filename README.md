@@ -136,6 +136,7 @@ Synexis/
 ├── Dockerfile
 ├── models.py
 ├── requirements.txt
+├── pyproject.toml
 └── README.md
 
 ---
