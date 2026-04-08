@@ -1,6 +1,3 @@
-
-# Synexis
-
 ---
 title: Synexis
 emoji: 🐨
@@ -9,19 +6,16 @@ colorTo: purple
 sdk: docker
 pinned: false
 license: mit
-short_description: 'AI-powered rescue environment with agent-based decision '
+short_description: 'AI-powered rescue environment with agent-based decision'
 ---
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
- 982c6026a29ea859f81e45dd87ccc5f5b835bf6c
+# 🚀 Synexis Rescue Environment
 
-🚀 Synexis Rescue Environment
-
-🧠 Team: MindMatrix
+🧠 **Team: MindMatrix**
 
 ---
 
-👥 Team Members
+## 👥 Team Members
 
 - Sahil Khan
 - Pritam Maity
@@ -31,16 +25,15 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
 
 ---
 
-🌟 Project Overview
+## 🌟 Project Overview
 
-Synexis is an AI-powered rescue environment designed to simulate a grid-based search-and-rescue mission.
-An intelligent agent navigates a grid to locate and rescue a victim in the shortest possible time.
+Synexis is an AI-powered rescue environment designed to simulate a grid-based search-and-rescue mission. An intelligent agent navigates a grid to locate and rescue a victim in the shortest possible time.
 
 The project is built to integrate seamlessly with OpenEnv validation and supports dynamic difficulty levels.
 
 ---
 
-🎯 Objectives
+## 🎯 Objectives
 
 - Build a scalable and interactive AI environment
 - Simulate real-world rescue navigation problems
@@ -49,7 +42,7 @@ The project is built to integrate seamlessly with OpenEnv validation and support
 
 ---
 
-⚙️ Features
+## ⚙️ Features
 
 - 🔹 Grid-based environment simulation
 - 🔹 3 difficulty levels: Easy, Medium, Hard
@@ -60,67 +53,67 @@ The project is built to integrate seamlessly with OpenEnv validation and support
 
 ---
 
-🧠 How It Works
+## 🧠 How It Works
 
-- The agent starts at position "(0,0)"
+- The agent starts at position `(0,0)`
 - A victim is randomly placed in the grid
-- The agent can move in four directions:
-  - "UP"
-  - "DOWN"
-  - "LEFT"
-  - "RIGHT"
+- The agent can move in four directions: `UP`, `DOWN`, `LEFT`, `RIGHT`
 - Each step has a small penalty
 - Reaching the victim gives a reward
 
-🎯 Goal: Rescue the victim in minimum steps
+🎯 **Goal:** Rescue the victim in minimum steps
 
 ---
 
-📡 API Endpoints
+## 📡 API Endpoints
 
-🔹 Reset Environment
+### 🔹 Reset Environment
 
-POST "/reset"
+```http
+POST /reset
+```
 
+```json
 {
   "task": "easy"
 }
+```
 
----
+### 🔹 Take Action
 
-🔹 Take Action
+```http
+POST /step
+```
 
-POST "/step"
-
+```json
 {
   "action": "RIGHT"
 }
+```
+
+### 🔹 Get Score
+
+```http
+GET /score
+```
+
+### 🔹 Check Status
+
+```http
+GET /status
+```
 
 ---
 
-🔹 Get Score
+## 🌐 Live Deployment
 
-GET "/score"
+🔗 **Hugging Face Space:** https://sahil-2085-synexis.hf.space
 
----
-
-🔹 Check Status
-
-GET "/status"
+🔗 **API Docs:** https://sahil-2085-synexis.hf.space/docs
 
 ---
 
-🌐 Live Deployment
-
-🔗 Hugging Face Space:
-https://sahil-2085-synexis.hf.space
-
-🔗 API Docs:
-https://sahil-2085-synexis.hf.space/docs
-
----
-
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 - 🐍 Python
 - ⚡ FastAPI
@@ -130,22 +123,21 @@ https://sahil-2085-synexis.hf.space/docs
 
 ---
 
-📂 Project Structure
-
+## 📂 Project Structure
 Synexis/
-│── main.py
-│── env.py
-│── tasks.py
-│── grader.py
-│── inference.py
-│── openenv.yaml
-│── Dockerfile
-│── requirements.txt
-│── README.md
+├── main.py
+├── env.py
+├── tasks.py
+├── grader.py
+├── inference.py
+├── openenv.yaml
+├── Dockerfile
+├── requirements.txt
+└── README.md
 
 ---
 
-✅ Validation
+## ✅ Validation
 
 ✔ Successfully passes OpenEnv validation
 ✔ Docker build successful
@@ -153,7 +145,7 @@ Synexis/
 
 ---
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 - Add obstacles and dynamic environments
 - Implement advanced RL agents
@@ -162,13 +154,12 @@ Synexis/
 
 ---
 
-🏁 Conclusion
+## 🏁 Conclusion
 
-Synexis demonstrates how AI agents can efficiently solve navigation and rescue problems using structured environments.
-It serves as a foundation for more advanced real-world AI simulations.
+Synexis demonstrates how AI agents can efficiently solve navigation and rescue problems using structured environments. It serves as a foundation for more advanced real-world AI simulations.
 
 ---
 
-🙌 Acknowledgement
+## 🙌 Acknowledgement
 
-Developed during openenv hackathon organised by scaler academy and sponsored by Meta, Pytorch and Hugging Face
+Developed during the OpenEnv Hackathon organised by Scaler Academy and sponsored by Meta, PyTorch, and Hugging Face.
