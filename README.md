@@ -17,7 +17,7 @@ short_description: 'AI-powered rescue environment with agent-based decision'
 
 ## 👥 Team Members
 
-- Sahil Khan
+- Sahil Khan (Team Lead)
 - Pritam Maity
 
 🎓 Haldia Institute of Technology
