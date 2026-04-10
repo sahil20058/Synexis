@@ -123,12 +123,14 @@ GET /status
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
+
+```
 Synexis/
-├── server
-      ├── __init__.py
-      ├── app.py
-      ├── environment.py
+├── server/
+│   ├── __init__.py
+│   ├── app.py
+│   └── environment.py
 ├── agent.py
 ├── client.py
 ├── inference.py
@@ -138,6 +140,7 @@ Synexis/
 ├── requirements.txt
 ├── pyproject.toml
 └── README.md
+```
 
 ---
 
