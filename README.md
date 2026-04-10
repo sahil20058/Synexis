@@ -133,6 +133,8 @@ Synexis/
 │   └── environment.py
 ├── agent.py
 ├── client.py
+├── grader.py
+├── tasks.py
 ├── inference.py
 ├── openenv.yaml
 ├── Dockerfile
