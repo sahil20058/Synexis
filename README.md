@@ -445,6 +445,3 @@ Developed during the **OpenEnv Hackathon** organised by [Scaler Academy](https:/
 
 ---
 
-## 📄 License
-
-This project is open-source. See [LICENSE](./LICENSE) for details.
