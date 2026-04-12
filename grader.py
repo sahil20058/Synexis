@@ -1,14 +1,22 @@
 # grader.py
+
 def compute_score(total_reward, steps, max_steps):
     """
-    Compute the score for the agent.
-    Ensures score is strictly between 0 and 1 for all tasks.
+    Robust score function:
+    - Handles negative rewards
+    - Always returns strictly between (0,1)
     """
-    # Basic score calculation
-    score = total_reward / max_steps
 
-    # Clip strictly between 0 and 1
-    epsilon = 1e-4  # small buffer
-    score = max(min(score, 1.0 - epsilon), epsilon)
+    # Normalize reward into positive range
+    # Worst case: all penalties → total_reward ≈ -max_steps*0.1
+    min_reward = -max_steps * 0.1
+    max_reward = 1.0  # best case rescue
+
+    # Normalize to 0 → 1
+    score = (total_reward - min_reward) / (max_reward - min_reward)
+
+    # Final strict clipping
+    epsilon = 1e-4
+    score = max(min(score, 1 - epsilon), epsilon)
 
     return score
