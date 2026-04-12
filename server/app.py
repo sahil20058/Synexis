@@ -32,10 +32,11 @@ def step(action: Literal["UP","DOWN","LEFT","RIGHT"] = Body(...)):
 @app.get("/score")
 def score():
     raw_score = compute_score(env.total_reward, env.steps, env.max_steps)
-    epsilon = 1e-4
-    score_value = max(min(raw_score, 1.0 - epsilon), epsilon)
-    return {"score": score_value}
 
+    epsilon = 1e-4
+    safe_score = max(min(raw_score, 1 - epsilon), epsilon)
+
+    return {"score": safe_score}
 def main():
     uvicorn.run("server.app:app", host="0.0.0.0", port=7860, reload=True)
 
